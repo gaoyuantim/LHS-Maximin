@@ -1,2 +1,2 @@
 # LHS
-Programs about latin hyber cube
+Programs about latinhyber cube
