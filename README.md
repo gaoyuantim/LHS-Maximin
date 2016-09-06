@@ -1,4 +1,4 @@
-# LHS
+# LHS-Maximin
 This repository provides several programs by some methods in order to improve Latin Hypercube Sampling by criteria of maximin.
 ## Requirements
 You need an interpreter of the Matlab/Octave langage, that is, either Mathworks's [Matlab](http://www.mathworks.com/products/matlab/ "Matlab") or
