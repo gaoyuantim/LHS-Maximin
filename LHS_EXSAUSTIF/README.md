@@ -1,5 +1,5 @@
 ## Guide
-In this files there are three programs using the iteration methods in Matlab environment. Before running in Matlab, we should initialize the mex files in the Matlab.  We have two steps:
+In this files there are three programs using the iteration methods in Matlab environment. Before running in Matlab, we should initialize the mex files in the Matlab.  You can run directly the file _init.m_ in your Matlab, or you have two steps:
 
   Run in the Command Window of Matlab :
 
