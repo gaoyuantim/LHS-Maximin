@@ -24,6 +24,6 @@ This method focus on find out a group of points with a maximin square distance D
 
 In this way, we check every possible position line by line. At each time when we try a position, there will be an area around the position becoming forbidden area, which means no other points could take these positions anymore.
 
-However, it gets more and more complicated by the growth of dimensions, so we just realized this method in 2 and 3 dimensions. We can see that from the title that <<LHS_D2_2>> means 2 dimensions and <<LHS_D2_3>> means the space has 3 dimensions.
+However, it gets more and more complicated by the growth of dimensions, so we just realized this method in 2 and 3 dimensions. We can see that from the title that the first means 2 dimensions and the second means the space has 3 dimensions.
 
 At last, all the results meaningful we get are stored in the folder file.
