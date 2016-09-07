@@ -1,3 +1,29 @@
+/******************************************************************************
+*                                                                            *
+* Copyright Notice                                                           *
+*                                                                            *
+*    Copyright (C) 2016 CentraleSupelec                                      *
+*                                                                            *
+*    Author: Yuan Gao <gaoyuantim@gmail.com>                                  *
+*                                                                            *
+* Copying Permission Statement                                               *
+*                                                                            *
+*    This program is free software; you can redistribute it and/or modify it *
+*    under the terms of the  GNU Lesser General Public License  as published *
+*    by the Free Software Foundation;  either version 3.0 of the License, or *
+*    (at your option) any later version.                                     *
+*                                                                            *
+*    This program  is distributed  in the hope  that it will be useful,  but *
+*    WITHOUT ANY WARRANTY;  without even  the implied warranty of MERCHANTA- *
+*    BILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General *
+*    Public License for more details.                                        *
+*                                                                            *
+*    You  should have  received  a copy of  the GNU  Lesser  General  Public *
+*    License along with this program;  if not, see                           *
+*    <http://www.gnu.org/licenses/>.                                         *
+*                                                                            *
+******************************************************************************/
+
 #include "mex.h"
 #include <stdio.h>
 #include <stdlib.h>
@@ -16,6 +42,29 @@ void Swap(int *a, int *b){
 	int temp = *a;
 	*a = *b;
 	*b = temp;
+}
+
+void LHS_Start(int m, int n, double *D2_maximin, double *Table_max);
+
+void mexFunction(int nlhs, mxArray *plhs[], int nrhs,
+	const mxArray *prhs[]){
+
+	int m, n;
+	double *D2_maximin;
+
+	if (nrhs != 2){
+		mexErrMsgTxt("We need two caracters!");
+	}
+	m = (int)mxGetScalar(prhs[0]);
+	n = (int)mxGetScalar(prhs[1]);
+	plhs[0] = mxCreateDoubleMatrix(1, 1, mxREAL);
+	plhs[1] = mxCreateDoubleMatrix(n, m, mxREAL);
+
+	double *Table_max;
+	D2_maximin = mxGetPr(plhs[0]);
+	Table_max = mxGetPr(plhs[1]);
+
+	LHS_Start(m, n, D2_maximin, Table_max);
 }
 
 /*Compare each distance between every group of two points*/
@@ -237,27 +286,4 @@ void LHS_Start(int m, int n, double *D2_maximin, double *Table_max){
 	coord= NULL;
 	free(delta2_pairs);
 	delta2_pairs = NULL;
-}
-
-
-void mexFunction(int nlhs, mxArray *plhs[], int nrhs, 
-        const mxArray *prhs[]){
-    
-    int m, n;
-    double *D2_maximin;
-
-    if (nrhs != 2){
-        mexErrMsgTxt("We need two caracters!");
-    }
-    m = (int)mxGetScalar(prhs[0]);
-    n = (int)mxGetScalar(prhs[1]);
-    plhs[0] = mxCreateDoubleMatrix(1,1,mxREAL);
-    plhs[1] = mxCreateDoubleMatrix(n,m,mxREAL);
-    
-    double *Table_max;
-    D2_maximin = mxGetPr(plhs[0]);
-    Table_max = mxGetPr(plhs[1]);
-    
-    LHS_Start(m, n, D2_maximin, Table_max);
-
 }
