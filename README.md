@@ -1,5 +1,16 @@
+<img src="Logo.png" align="left" />
 # LHS-Maximin
 This repository provides several programs by some methods in order to improve Latin Hypercube Sampling by criteria of maximin.
+Totally, this repository includes 4 different points of views to solve the problem. For example:
+* Method of iteration
+  * In this method, the program check all the possibilities to find out the results, you can check it in the folder: LHS_EXAUSTIF
+* Method of testing distance 
+  * Generally when we have got the maximin distance, we can try to detect the result directly. In the folder: LHS_D2TEST
+* Method of sum combination
+  * When the number of dimension >= number of points, the maximin distance is close to the theoretical limit. In the folder: LHS_SUM
+* Method of checking bound
+  * When the number of points and dimensions are too big to find out the result, the repository provides a method to find out the bound. In the folder: LHS_BOUND
+
 ## Requirements
 You need an interpreter of the Matlab/Octave langage, that is, either Mathworks's [Matlab](http://www.mathworks.com/products/matlab/ "Matlab") or
 [GNU Octave](https://www.gnu.org/software/octave/ "GNU Octave").
