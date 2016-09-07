@@ -17,7 +17,7 @@ In this files there are two programs realized by testing maximin distance in mat
 
     Table = filename(n,D2)
 
-Here, _n_ is number of points, _D2_ is the square of distance tested. _filename_ depends on which algorithme you choose.
+Here, _n_ is number of points, _D2_ is the square of distance tested. _filename_ depends on which dimension you choose.
 
 ## About algorithme
 This method focus on find out a group of points with a maximin square distance D2 we studied, at last we will get a result of table or nothing as D2 maybe too big.
