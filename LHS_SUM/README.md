@@ -32,7 +32,7 @@ Upper Bound | 5 | 10 | 15 | 20 | 25 | 30 | 35 | 40 | 45 | 50 | 55 | 60 | 65 | 70
 
 So we try to solve the problem from this point of view.
 
-For example, we would like to solve when _k = 8_ and _n = 5_, we can calculate that the _upper bound = 40_. Then we decompose the sum:
+For example, we would like to solve when _k = 8_ and _n = 5_, we can calculate that the _upper bound = 40_. Then we decompose the sum by square numbers:
 
 16 | 9 | 4 | 4 | 4 | 1 | 1 | 1
 ---|---|---|---|---|---|---|---
