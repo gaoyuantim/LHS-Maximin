@@ -20,7 +20,7 @@ In this files there are three programs using the iteration methods in Matlab env
 
     [D2, Table] = filename(m,n)
 
-Here, m  is dimension, n is number of points
+Here, _m_ is dimension, _n_ is number of points. _filename_ depends on which algorithme you choose.
 
 ## About algorithme
 
