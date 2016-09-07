@@ -1,4 +1,4 @@
-<img src="Logo.png" align="left" />
+
 # LHS-Maximin
 This repository provides several programs by some methods in order to improve Latin Hypercube Sampling by criteria of maximin.
 Totally, this repository includes 4 different points of views to solve the problem. For example:
