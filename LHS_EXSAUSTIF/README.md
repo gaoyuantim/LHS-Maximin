@@ -32,3 +32,5 @@ In the program LHS.c, at last we get a normal group of points and a maximin valu
 In the program LHS_2.c, we change another method of comparison. For example, we would like to find maximin of N points in a space of M dimensions. Now we decide a construction of n points in m dimensions and m < M, then we calculate all the possibility to find out the maximin for the rest dimensions with the result of the prior dimensions. After that we return the value of maximin to the previous dimension, and in the layer of previous dimension, we will gather all the maximins with different distribution in this dimension and return the max to its previous. At last, we will get the maximin for the space.
 
 For the program LHS_2.c, it will take more time than LHS.C, which is also the reason we construct the program LHS_Optimal.c by first method.
+
+At last, all the results meaningful we get are stored in the folder file.
