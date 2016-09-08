@@ -14,10 +14,10 @@ At first we use the method in the article: _Bounds for Maximin Latin Hypercube D
 
 After that, we realize that some parts of the method can be improved, so we add more constraint to find out a better bound. The second program is realize in this way. As a result, there isn’t much difference between the two methods, but the new method can really decrease the bound for some points. However, because of the new constraint, the new method takes longer time than the origin. 
 
+At last, here is a part of the meaningful results we have got for present.
+
 Points | 10 | 11 | 12 | 13 | 14 | 15 | 16 | 17 | 18 | 19 | 20 | 21 | 22 | 23 | 24 | 25 | 26 | 27 | 28 | 29 | 30 | 31 | 32 | 33 | 34 | 35 | 36 | 37 | 38 | 39 | 40 | 41 | 42 | 43 | 44 | 45 | 46 | 47 | 48 | 49 | 50
 ---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 Old Bound| 13 | 13 | 13 | 13 | 17 | 17 | 18 | 20 | 20 | 25 | 25 | 25 | 26 | 29 | 29 | 29 | 29 | 32 | 34 | 34 | 34 | 34 | 37 | 40 | 41 | 41 | 41 | 45 | 45 | 45 | 45 | 45 | 50 | 52 | 52 | 52 | 53 | 58 | 58 | 58 | 61
 New Bound|10 | 10 | 13 | 13 | 17 | 17 | 18 | 18 | 20 | 20 | 25 | 25 | 26 | 26 | 26 | 29 | 29 | 29 | 32 | 34 | 34 | 37 | 37 | 37 | 40 | 41 | 41 | 41 | 45 | 45 | 45 | 45 | 50 | 50 | 50 | 52 | 53 | 53 | 58 | 58 | 58 
 D^2|10 | 10 | 13 | 13 | 17 | 17 | 17 | 18 | 18 | 18 | 18 | 20 | 25 | 26 | 26 | 26 | 26 | 26 | 29 | 29 | 29 | 32 | 32 | 34 | 37 | 37 | 37 | 37 | 41 | 41 | 41 | 41 | 41 | 41 | 50 | 50 | 50 | 50 | 50 | 50 | 52
-
-At last, all the results meaningful we get are stored in the folder file.
