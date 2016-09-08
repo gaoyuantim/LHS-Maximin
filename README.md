@@ -18,7 +18,7 @@ The results presented in the repository were obtained using Matlab R2015a on a c
 ## Installation
 All the programs in the repository are mex files, which means you should run them in Matlab/Octave where has a better performance on presenting. But before the running, you should run a program initialize the mex files.
 ## Licence
-Copyright (C) 2016 CentraleSupelec
+Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com>
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
