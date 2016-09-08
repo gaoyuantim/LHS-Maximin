@@ -20,7 +20,7 @@ The results presented in the repository were obtained using Matlab R2015a on a c
 Simply run init.m to compile all the MEX-files and add subdirectories to the path.
 
 ## Licence
-Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com>
+Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com> and CentraleSupelec
 
 This library is free software; you can redistribute it and/or
 modify it under the terms of the GNU Lesser General Public
