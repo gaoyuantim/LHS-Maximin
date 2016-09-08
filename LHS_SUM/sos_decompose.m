@@ -2,9 +2,9 @@
 %                                                                         
 % Copyright Notice                                                         
 %                                                                         
-%    Copyright (C) 2016 CentraleSupelec                                   
+%    Copyright (C) 2016 CentraleSupelec
 %                                                                         
-%    Author: Yuan Gao <gaoyuantim@gmail.com>                              
+%    Author: Julien Bect <julien.bect@centralesupelec.fr>                            
 %                                                                         
 % Copying Permission Statement                                            
 %                                                                          
