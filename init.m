@@ -3,6 +3,7 @@
 %    Copyright (C) 2016 CentraleSupelec
 %
 %    Author: Julien Bect <julien.bect@centralesupelec.fr>
+%            Yuan GAO <gaoyuantim@gmail.com>
 %
 % Copying Permission Statement
 %
@@ -40,6 +41,12 @@ try
     MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_SUM');
     cd (MAXIMINLHS_METHOD_DIR);
     mex LHS_Sum.c
+    addpath (MAXIMINLHS_METHOD_DIR);
+    
+    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_Bound');
+    cd (MAXIMINLHS_METHOD_DIR);
+    mex LHS_Bound.c
+    mex LHS_Multi_Bound.c
     addpath (MAXIMINLHS_METHOD_DIR);
     
 catch
