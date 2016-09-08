@@ -2,9 +2,9 @@
 *                                                                            *
 * Copyright Notice                                                           *
 *                                                                            *
-*    Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com>                                    *
+*    Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com>                      *
 *                                                                            *
-*    Author: Yuan Gao <gaoyuantim@gmail.com>                                  *
+*    Author: Yuan Gao <gaoyuantim@gmail.com>                                 *
 *                                                                            *
 * Copying Permission Statement                                               *
 *                                                                            *
