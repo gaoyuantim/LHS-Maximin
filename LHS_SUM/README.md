@@ -16,7 +16,7 @@ In this files there are a programs realized by calculating sum distance in Matla
 
 Here, _n_ is number of points, _k_ means dimension. _sum[]_ means the group of distance calculated.
 
-## About algorithme
+## About algorithm
 This method focus on the special situation when the dimension k >= the number of points n. According to the article _Bounds for Maximin Latin Hypercube Designs_ by Edwin R.van Dam, Gijs Rennen, Bart Husslage, we get a conclusion:
 
     d^2 <= [ n * (n + 1) * k / 6]
