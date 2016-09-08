@@ -23,10 +23,12 @@
 *    <http://www.gnu.org/licenses/>.                                         *
 *                                                                            *
 ******************************************************************************/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include "mex.h"
+#include <stdbool.h>
 
 void Coord_Occupation(int x, int y, int n, bool *coord, char *coord_Change, int Distance);
 bool Calculation(int y, int n, bool *coord_fix, char *coord_Change, int Distance, char *Table);

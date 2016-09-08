@@ -28,6 +28,7 @@
 #include <stdlib.h>
 #include <math.h>
 #include "mex.h"
+#include <stdbool.h>
 
 bool calculation_Dimension(int n, int m, int dimension, int num_Type, int **type_Ligne, double *num_Result, int **Distance2, int *table_Fix);
 bool calculation_Colone(int num, int n, int m, int dimension, int num_Type, int *table, bool *table_Check, int **type_Ligne, int **type_Ligne_Backup, double *num_Result, int **Distance2, int *table_Fix);
