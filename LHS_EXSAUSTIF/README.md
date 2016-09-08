@@ -1,20 +1,5 @@
 ## Guide
-In this files there are three programs using the iteration methods in Matlab environment. Before running in Matlab, we should initialize the mex files in the Matlab.  You can run directly the file _init.m_ in your Matlab, or you have two steps:
-
-  Run in the Command Window of Matlab :
-
-    mex LHS.c
-    mex LHS_2.c
-    mex LHS_Optimal.c
-
-  Then you can see these lines:
-
-    Building with 'Microsoft Visual C++ 2013 Professional (C)'.
-    MEX completed successfully.
-    Building with 'Microsoft Visual C++ 2013 Professional (C)'.
-    MEX completed successfully.
-    Building with 'Microsoft Visual C++ 2013 Professional (C)'.
-    MEX completed successfully.
+In this files there are three programs using the iteration methods in Matlab environment.
 
   Input in the Command window of Matlab : 
 
