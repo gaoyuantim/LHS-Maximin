@@ -10,7 +10,7 @@
 *                                                                            *
 *    This program is free software; you can redistribute it and/or modify it *
 *    under the terms of the  GNU Lesser General Public License  as published *
-*    by the Free Software Foundation;  either version 3.0 of the License, or *
+*    by the Free Software Foundation;  either version 2.1 of the License, or *
 *    (at your option) any later version.                                     *
 *                                                                            *
 *    This program  is distributed  in the hope  that it will be useful,  but *
@@ -52,7 +52,7 @@ void Copy(int *a, int *b, int length){
 void LHS_Start(int m, int n, double *D2_maximin, double *coord_fix);
 int Colone_Change(int dimension, int position, int m, int n, int *coord, int *coord_maximin, int *Delta2_pairs, int *D2_pairs, double D2_maximin);
 int Ligne_Change(int dimension, int m, int n, int *coord_fix, int *D2_pairs, double D2_maximin);
-void Caculation(int p_1, int p_2, int m, int n, int **delta2_pairs, int *D2_pairs);
+void Caculation(int p_1, int p_2, int m, int n, int *Delta2_pairs, int *D2_pairs);
 
 void mexFunction(int nlhs, mxArray *plhs[], int nrhs,
         const mxArray *prhs[]){

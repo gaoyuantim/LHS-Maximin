@@ -1,26 +1,24 @@
+% Copyright Notice
 %
-%                                                                         
-% Copyright Notice                                                         
-%                                                                         
-%    Copyright (C) 2016 Julien Bect <julien.bect@centralesupelec.fr>
-%                                                                         
-%    Author: Julien Bect <julien.bect@centralesupelec.fr>                            
-%                                                                         
-% Copying Permission Statement                                            
-%                                                                          
+%    Copyright (C) 2016 CentraleSupelec
+%
+%    Author: Julien Bect <julien.bect@centralesupelec.fr>
+%
+% Copying Permission Statement
+%
 %  This program is free software; you can redistribute it and/or modify it
 %  under the terms of the  GNU Lesser General Public License  as published
-%  by the Free Software Foundation;  either version 3.0 of the License, or
-%  (at your option) any later version.                                  
-%                                                                        
+%  by the Free Software Foundation;  either version 2.1 of the License, or
+%  (at your option) any later version.
+%
 %  This program  is distributed  in the hope  that it will be useful,  but
 %  WITHOUT ANY WARRANTY;  without even  the implied warranty of MERCHANTA-
 %  BILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General
-%  Public License for more details.                                     
-%                                                                         
+%  Public License for more details.
+%
 %  You  should have  received  a copy of  the GNU  Lesser  General  Public
-%  License along with this program;  if not, see                        
-%  <http://www.gnu.org/licenses/>. 
+%  License along with this program;  if not, see
+%  <http://www.gnu.org/licenses/>.
 %
 % sos_decompose computes decompositions into sum of squares
 %
@@ -48,12 +46,12 @@ if k == 1
     for t = 1:dmax
         sos{t^2, 1} = t^2;
     end
-    
+
 else
 
     [~, sos] = sos_decompose (S, k - 1, dmax);
     sos = [sos cell(S, 1)];
-    
+
     for SS = k:S,
         dmax0 = min (dmax, floor (sqrt (SS - (k - 1))));
         for t = dmax0:-1:1
@@ -65,7 +63,7 @@ else
         end
         sos{SS, k} = unique (sort (sos{SS, k}, 2, 'descend'), 'rows', 'stable');
     end
-    
+
 end % if
 
 sos_all = sos;
