@@ -27,9 +27,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <stdbool.h>
 #include "mex.h"
-
+#include <stdbool.h>
 
 void Coord_Occupation(int x, int y, int n, int length, int distance, bool *coord, char *coord_Change);
 bool Calculation(int number, int n, int length, int distance, bool *coord_fix, char *coord_Change);
