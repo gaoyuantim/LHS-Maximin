@@ -15,8 +15,10 @@ You need an interpreter of the Matlab/Octave langage, that is, either Mathworks'
 [GNU Octave](https://www.gnu.org/software/octave/ "GNU Octave").
 
 The results presented in the repository were obtained using Matlab R2015a on a computer equipped with Inter i7 3.4GHZ and RAM 16g. Besides, you’d better pay attention to your version of visual studio, which should match well with Matlab version.
+
 ## Installation
-All the programs in the repository are mex files, which means you should run them in Matlab/Octave where has a better performance on presenting. But before the running, you should run a program initialize the mex files.
+Simply run init.m to compile all the MEX-files and add subdirectories to the path.
+
 ## Licence
 Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com>
 

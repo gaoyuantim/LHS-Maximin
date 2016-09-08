@@ -43,7 +43,8 @@ int Square(int a){
 }
 
 void Copy(int *a, int *b, int length){
-	for (int i = 0; i < length; i++){
+	int i;
+	for (i = 0; i < length; i++){
 		a[i] = b[i];
 	}
 }
@@ -101,12 +102,13 @@ void LHS_Start(int m, int n, double *D2_result, double *Table_max){
 
 
 void Caculation(int p_1, int p_2, int m, int n, int *Delta2_pairs, int *D2_pairs){
+	int i;
 
 	/*Change distance2 between the points in the same dimension*/
 	int *t1, *t2;
 	int p_1n = p_1 * n;
 	int p_2n = p_2 * n;
-	for (int i = 0; i<n; i++){
+	for (i = 0; i<n; i++){
 		if ((i != p_1) && (i != p_2)){
 			t1 = Delta2_pairs + p_1n + i;
 			t2 = Delta2_pairs + p_2n + i;
@@ -118,7 +120,7 @@ void Caculation(int p_1, int p_2, int m, int n, int *Delta2_pairs, int *D2_pairs
 
 	/*Calculation D2*/
 	int in;
-	for (int i = 0; i < n; i++){
+	for (i = 0; i < n; i++){
 		in = i * n;
 		t1 = Delta2_pairs + p_1n + i;
 		t2 = Delta2_pairs + p_2n + i;
@@ -132,19 +134,18 @@ void Caculation(int p_1, int p_2, int m, int n, int *Delta2_pairs, int *D2_pairs
 }
 
 int Colone_Change(int dimension, int position, int m, int n, int *coord, int *coord_maximin, int *Delta2_pairs_fix, int *D2_pairs_fix, double D2_maximin){
-	
+
 	int p_1 = position - 1;
-	int D2_min;
+	int p_2, i, j, D2_min, *Delta2_pairs, *D2_pairs;
 	int *t1, *t2;
-	int *Delta2_pairs, *D2_pairs;
 
 	Delta2_pairs = (int *)malloc(n*n*sizeof(int));
 	D2_pairs = (int *)malloc(n*n*sizeof(int));
 
 	/*Iteration of every point in each dimension*/
 	if (position != n){
-		for (int p_2 = p_1; p_2 < n; p_2++){
-			
+		for (p_2 = p_1; p_2 < n; p_2++){
+
 			/*Exchange the coordinates*/
 			t1 = coord + p_1;
 			t2 = coord + p_2;
@@ -171,8 +172,8 @@ int Colone_Change(int dimension, int position, int m, int n, int *coord, int *co
 			else {
 				/*Caculation of D2_min in the last dimension*/
 				D2_min = n*n*m;
-				for (int i = 0; i < n; i++){
-					for (int j = i + 1; j < n; j++){
+				for (i = 0; i < n; i++){
+					for (j = i + 1; j < n; j++){
 						D2_min = MIN(D2_min, D2_pairs[i*n + j]);
 					}
 				}
@@ -200,16 +201,16 @@ int Colone_Change(int dimension, int position, int m, int n, int *coord, int *co
 }
 
 int Ligne_Change(int dimension, int m, int n, int *coord_fix, int *D2_pairs_fix, double D2_maximin){
-	
-	int *coord, *coord_maximin, *D2_pairs;
-	
+
+	int i, j, *coord, *coord_maximin, *D2_pairs;
+
 	D2_pairs = (int *)malloc(n*n*sizeof(int));
 	Copy(D2_pairs, D2_pairs_fix, n*n);
 
 	/*Initilisation of the coordinates in this dimension*/
 	coord = (int *)malloc(n*(m - dimension + 1)*sizeof(int));
 	coord_maximin = (int *)malloc(n*(m - dimension + 1)*sizeof(int));
-	for (int i = 0; i < n; i++){
+	for (i = 0; i < n; i++){
 		coord[i] = i;
 		coord_maximin[i] = i;
 	}
@@ -217,15 +218,15 @@ int Ligne_Change(int dimension, int m, int n, int *coord_fix, int *D2_pairs_fix,
 	/*Initialisation of Delta2_pairs in this dimension*/
 	int *Delta2_pairs;
 	Delta2_pairs  = (int *)malloc(n*n*sizeof(int));
-	for (int i = 0; i < n; i++){
-		for (int j = 0; j < n; j++){
+	for (i = 0; i < n; i++){
+		for (j = 0; j < n; j++){
 			Delta2_pairs[i*n + j] = Square(coord[i] - coord[j]);
 			D2_pairs[i*n + j] += Delta2_pairs[i*n + j];
 		}
 	}
 
 	if (dimension == 1){
-		for (int i = 0; i < n; i++){
+		for (i = 0; i < n; i++){
 			coord_fix[i] = i;
 		}
 		/*Clear pointer*/

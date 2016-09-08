@@ -1,17 +1,5 @@
 ## Guide
-In this files there are two programs realized by testing maximin distance in matlab environment. Before running in Matlab, we should initialize the mex files in the Matlab.  You can run directly the file _init.m_ in your Matlab, or you have two steps:
-
-  Run in the Command Window of Matlab :
-
-    mex LHS_D2_2.c
-    mex LHS_D2_3.c
-
-  Then you can see these lines:
-
-    Building with 'Microsoft Visual C++ 2013 Professional (C)'.
-    MEX completed successfully.
-    Building with 'Microsoft Visual C++ 2013 Professional (C)'.
-    MEX completed successfully.
+In this files there are two programs realized by testing maximin distance in matlab environment.
 
   Input in the Command window of Matlab : 
 
