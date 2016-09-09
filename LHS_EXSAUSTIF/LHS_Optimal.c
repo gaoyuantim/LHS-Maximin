@@ -51,7 +51,7 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs,
 	const mxArray *prhs[]){
 
 	int m, n;
-	double *D2_maximin;
+	double *D2_maximin, *Table_max;
 
 	if (nrhs != 2){
 		mexErrMsgTxt("We need two caracters!");
@@ -61,7 +61,6 @@ void mexFunction(int nlhs, mxArray *plhs[], int nrhs,
 	plhs[0] = mxCreateDoubleMatrix(1, 1, mxREAL);
 	plhs[1] = mxCreateDoubleMatrix(n, m, mxREAL);
 
-	double *Table_max;
 	D2_maximin = mxGetPr(plhs[0]);
 	Table_max = mxGetPr(plhs[1]);
 
@@ -111,10 +110,11 @@ void Caculation (int dimension, int p_1, int p_2, int m, int n, int *coord,
         int **delta2_pairs, int *D2_pairs, int *D2_points, 
         double *D2_maximin, double *Table_max, int *D2_distribution)
 {
-  int i, j, k;
+  int i, j, k, in, D2_min, p_1n, p_2n;
 
 	/*Change distance2 between the points in one dimension*/
 	int *t1, *t2;
+
 	for (i = 0; i<n; i++){
 		if ((i != p_1) && (i != p_2)){
 			t1 = &(delta2_pairs[dimension*n + p_1][i]);
@@ -126,9 +126,8 @@ void Caculation (int dimension, int p_1, int p_2, int m, int n, int *coord,
 	}
 
 	/*Calculation D2*/
-	int in, D2_min;
-	int p_1n = p_1 * n;
-	int p_2n = p_2 * n;
+	p_1n = p_1 * n;
+	p_2n = p_2 * n;
 	for (i = 0; i < n; i++){
 		in = i * n;
 		t1 = &(delta2_pairs[dimension*n + p_1][i]);
