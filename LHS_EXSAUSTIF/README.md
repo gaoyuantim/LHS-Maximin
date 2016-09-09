@@ -39,13 +39,9 @@ Output:
 
 ## About the algorithms
 
-Totally the method realizing the ergodicity in the programs is same
-but we use two different structures to realize the iteration.  In the
-program `LHS.c` and LHS_Optimal, we calculate every possible
-construction of points to find out the maximin. According to the
-article : _An efficient algorithm for constructing optimal design of
-computer experiments_ by Ruichen Jin, Wei Chen and Agus Sudjianto,
-just a part of the values need to be changed each time.
+Totally the method realizing the ergodicity in the programs is same but we use two different structures to realize the iteration. 
+
+In the program LHS_Optimal, we calculate every possible construction of points to find out the maximin. According to the article : _An efficient algorithm for constructing optimal design of computer experiments_ by Ruichen Jin, Wei Chen and Agus Sudjianto, just a part of the values need to be changed each time.
 
 In the program `LHS_2.c`, we change another method of comparison. For
 example, we would like to find maximin of N points in a space of M
