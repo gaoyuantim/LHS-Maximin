@@ -1,3 +1,27 @@
+% Input :   n = number of points
+%           k = number of dimension
+%           sum = a group of square distance we are insterested in
+%
+% Output :  A table if there is a conbinaison satisfying the command;
+%           "FALSE" if the result doesn't exist
+%
+% SYNTAX :  Table = LHS_multi ( n , k , sum)
+%
+% Exemple : Table = LHS_multi(5, 8, [40]);
+%
+% Result :
+%
+%     Table =
+%
+%       0     1     2     3     4
+%       0     1     2     4     3
+%       0     3     4     1     2
+%       1     2     4     3     0
+%       1     4     0     2     3
+%       1     4     2     0     3
+%       1     4     2     3     0
+%       2     1     4     0     3
+
 % Copyright Notice
 %
 %    Copyright (C) 2016 Yuan Gao <gaoyuantim@gmail.com>
@@ -19,32 +43,6 @@
 %  You  should have  received  a copy of  the GNU  Lesser  General  Public
 %  License along with this program;  if not, see
 %  <http://www.gnu.org/licenses/>.
-%
-%
-% Input :   n = number of points
-%           k = number of dimension
-%           sum[] = the sum we are insterested in
-%
-% Output :  A table if there is a conbinaison satisfying the command;
-%           "FALSE" if the result doesn't exist
-%
-% SYNTAX :  Table = LHS_multi ( n , k , sum[])
-%
-% Exemple : Table = LHS_multi(5, 8, [40]);
-%
-% Result :
-%
-%     Table =
-%
-%       0     1     2     3     4
-%       0     1     2     4     3
-%       0     3     4     1     2
-%       1     2     4     3     0
-%       1     4     0     2     3
-%       1     4     2     0     3
-%       1     4     2     3     0
-%       2     1     4     0     3
-%
 
 function [ table_Fix ] = LHS_Bound_multi( n , k , addition )
 
