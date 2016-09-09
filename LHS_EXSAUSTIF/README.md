@@ -32,7 +32,7 @@ You will get:
 
 For the last program:
 
-    LHS_2(6,3)
+    LHS_Optimal(6,3)
 
 You will get:
 
