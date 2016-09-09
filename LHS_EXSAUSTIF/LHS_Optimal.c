@@ -47,32 +47,46 @@ void Swap (int *a, int *b)
   *b = temp;
 }
 
-void LHS_Start (int m, int n, double *D2_maximin, double *Table_max);
+void LHS_Start (int m, int n, int *D2_maximin, int *Table_max);
 
 /*Interation part of Matlab and C. The dimension m and points n are input from matlab and the calculation result will be returned back to Matlab*/
+
+#define ARGIN_N prhs[0]
+#define ARGIN_K prhs[1]
+
+#define ARGOUT_X  plhs[0]
+#define ARGOUT_D2 plhs[1]
+
 void mexFunction (int nlhs, mxArray *plhs[], int nrhs,
                   const mxArray *prhs[])
 {
-  int m, n;
-  double *D2_maximin, *Table_max;
-
+  int n, k, i, D2_opt, *x_opt;
+  double *x_opt_dbl;
+  size_t x_table_length;
+  
   if (nrhs != 2)
     mexErrMsgTxt ("We need two caracters!");
 
-  n = (int) mxGetScalar (prhs[0]);
-  m = (int) mxGetScalar (prhs[1]);
-  plhs[0] = mxCreateDoubleMatrix (n, m, mxREAL);
-  plhs[1] = mxCreateDoubleMatrix (1, 1, mxREAL);
+  n = (int) mxGetScalar (ARGIN_N);
+  k = (int) mxGetScalar (ARGIN_K);
+  x_table_length = (size_t) n * k;
+  
+  ARGOUT_X = mxCreateDoubleMatrix (n, k, mxREAL);
 
-  D2_maximin = mxGetPr (plhs[1]);
-  Table_max = mxGetPr (plhs[0]);
+  x_opt = (int *) mxCalloc (x_table_length, sizeof (int));
+  LHS_Start (k, n, &D2_opt, x_opt);
 
-  LHS_Start (m, n, D2_maximin, Table_max);
+  x_opt_dbl = mxGetPr (ARGOUT_X);
+  for (i = 0; i < x_table_length; i++)
+    x_opt_dbl[i] = (double) x_opt[i];
+
+  ARGOUT_D2 = mxCreateDoubleScalar ((double) D2_opt);
 }
+
 
 /*Compare each distance between every group of two points*/
 void Liste_Check (int m, int n, int *coord, int *D2_pairs,
-                  double D2_maximin, double *Table_max, int *D2_distribution)
+                  int D2_maximin, int *Table_max, int *D2_distribution)
 {
   int i, j, k;
   const int Total = n * (n - 1) / 2;
@@ -110,7 +124,7 @@ void Liste_Check (int m, int n, int *coord, int *D2_pairs,
 /*Change the distance between every point*/
 void Caculation (int dimension, int p_1, int p_2, int m, int n, int *coord,
                  int **delta2_pairs, int *D2_pairs, int *D2_points,
-                 double *D2_maximin, double *Table_max, int *D2_distribution)
+                 int *D2_maximin, int *Table_max, int *D2_distribution)
 {
   int i, j, k, in, D2_min, p_1n, p_2n;
 
@@ -178,7 +192,7 @@ void Caculation (int dimension, int p_1, int p_2, int m, int n, int *coord,
 
 void Position_Change (int dimension, int position, int m, int n, int *coord,
                       int **delta2_pairs, int *D2_pairs, int *D2_points,
-                      double *D2_maximin, double *Table_max,  int *D2_distribution)
+                      int *D2_maximin, int *Table_max,  int *D2_distribution)
 {
   int i = dimension - 1;
   int j = position - 1;
@@ -211,7 +225,7 @@ void Position_Change (int dimension, int position, int m, int n, int *coord,
     }
 }
 
-void LHS_Start (int m, int n, double *D2_maximin, double *Table_max)
+void LHS_Start (int m, int n, int *D2_maximin, int *Table_max)
 {
   int i, j, k;
   int *square;
