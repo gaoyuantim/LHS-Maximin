@@ -61,7 +61,7 @@ else
                 sos{SS, k} = [sos{SS, k}; [A B]];
             end
         end
-        sos{SS, k} = unique (sort (sos{SS, k}, 2, 'descend'), 'rows', 'stable');
+        sos{SS, k} = unique (sort (sos{SS, k}, 2, 'descend'), 'rows');
     end
 
 end % if
