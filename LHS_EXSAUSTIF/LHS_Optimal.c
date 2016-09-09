@@ -24,9 +24,10 @@
 *                                                                            *
 ******************************************************************************/
 
-#include "mex.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+#include "mex.h"
 
 int MIN(int a, int b){
 	if (a>b) return b;
@@ -74,9 +75,11 @@ void Liste_Check(int m, int n, int *coord, int *D2_pairs,
     int i, j, k;
     const int Total = n * (n - 1) / 2;
     int addition = 0;
-    
+
+    size_t sizeof_D2_distrib = sizeof (int) * (1 + (m * n * n));
+
     int *Table_comparaison;
-    Table_comparaison = (int *)malloc((m*n*n+1)*sizeof(int));
+    Table_comparaison = (int *) malloc (sizeof_D2_distrib);
     for (i = 0; i <= n*n*m; i++){
         Table_comparaison[i] = 0;
     }
@@ -89,14 +92,8 @@ void Liste_Check(int m, int n, int *coord, int *D2_pairs,
     
     for (i = D2_maximin; addition < Total; i++){
         if (Table_comparaison[i] < D2_distribution[i]){
-            for (j = 0; j < m; j++){
-                for (k = 0; k < n; k++){
-                    Table_max[j*n + k] = coord[j*n + k];
-                }
-            }
-            for (j = 0; j <= m*n*n; j++){
-                D2_distribution[j] = Table_comparaison[j];
-            }
+            memcpy (Table_max, coord, sizeof (int) * m * n);
+            memcpy (D2_distribution, Table_comparaison, sizeof_D2_distrib);
             break;
         }
         else if (Table_comparaison[i] > D2_distribution[i]){
@@ -157,12 +154,8 @@ void Caculation (int dimension, int p_1, int p_2, int m, int n, int *coord,
 	/*Calculate maximin D2*/
 	 if (*D2_maximin < D2_min){
         *D2_maximin = D2_min;
-        for (j = 0; j<m; j++){
-            for (k = 0; k<n; k++){
-                Table_max[j*n + k] = coord[j*n + k];
-            }
-        }
-        
+        memcpy (Table_max, coord, sizeof (int) * m * n);
+
         /*Reinitialisation de D2_distribution*/
         for (i = 0; i < m*n*n; i++){
             D2_distribution[i] = 0;
