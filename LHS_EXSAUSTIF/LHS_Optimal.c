@@ -32,21 +32,15 @@
 
 int MIN (int a, int b)
 {
-  if (a > b)
-    return b;
-  else
-    return a;
+  return ((a > b) ? b : a);
 }
 
 int FABS (int a)
 {
-  if (a > 0)
-    return a;
-  else
-    return -a;
+  return ((a < 0) ? (- a) : a);
 }
 
-void Swap(int *a, int *b)
+void Swap (int *a, int *b)
 {
   int temp = *a;
   *a = *b;
