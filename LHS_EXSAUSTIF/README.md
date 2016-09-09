@@ -10,7 +10,7 @@ Here, _m_ is dimension, _n_ is number of points. _filename_ depends on which alg
 ## Example
 you can run the programs in this way:
 
-    [Table , D2] = LHS(6,3)
+    LHS(6,3)
 
 You will get:
 
@@ -21,7 +21,7 @@ You will get:
 
 For the second program:
 
-    [Table , D2] = LHS_2(6,3)
+    LHS_2(6,3)
 
 You will get:
 
@@ -32,7 +32,7 @@ You will get:
 
 For the last program:
 
-    [Table , D2] = LHS_2(6,3)
+    LHS_2(6,3)
 
 You will get:
 
