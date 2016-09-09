@@ -1,3 +1,20 @@
+% sos_decompose computes decompositions into sum of squares
+%
+% SYNTAX:  sos = sos_decompose (S, k, n - 1)
+%
+%   computes all possible decompositions of integer S into a sum of k squares
+%
+% EXAMPLE:  S = 56, k = 6
+%
+%    >> sos = sos_decompose (56, 6, 6)
+%
+%    sos =
+%
+%       36    16     1     1     1     1
+%       36     4     4     4     4     4
+%       25    16     9     4     1     1
+%       16     9     9     9     9     4
+
 % Copyright Notice
 %
 %    Copyright (C) 2016 CentraleSupelec
@@ -19,23 +36,6 @@
 %  You  should have  received  a copy of  the GNU  Lesser  General  Public
 %  License along with this program;  if not, see
 %  <http://www.gnu.org/licenses/>.
-%
-% sos_decompose computes decompositions into sum of squares
-%
-% SYNTAX:  sos = sos_decompose (S, k, n - 1)
-%
-%   computes all possible decompositions of integer S into a sum of k squares
-%
-% EXAMPLE:  S = 56, k = 6
-%
-%    >> sos = sos_decompose (56, 6, 6)
-%
-%    sos =
-%
-%       36    16     1     1     1     1
-%       36     4     4     4     4     4
-%       25    16     9     4     1     1
-%       16     9     9     9     9     4
 
 function [sos, sos_all] = sos_decompose (S, k, dmax)
 
@@ -61,7 +61,7 @@ else
                 sos{SS, k} = [sos{SS, k}; [A B]];
             end
         end
-        sos{SS, k} = unique (sort (sos{SS, k}, 2, 'descend'), 'rows', 'stable');
+        sos{SS, k} = unique (sort (sos{SS, k}, 2, 'descend'), 'rows');
     end
 
 end % if
