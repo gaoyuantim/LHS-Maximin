@@ -4,17 +4,17 @@ Input in the Command window of Matlab :
 
     Bound = filename(n,D2)
 
-Here, _n_ is number of points, _D2_ is the bound of square distance which we start to test but this D2 isn’t tested in the program. _filename_ depends on which method you choose.
+Here, _n_ is number of points, _D2_ is the bound of square distance which we start to test but this D2 isn’t included. _filename_ depends on which method you choose.
 
 ## Example
-### Example for LHS_Bound.c
+### Example with LHS_Bound.c
 After you have initialized the mex files, input in the Command window of Matlab:
 
     Bound = LHS_Bound(15, 17)
     
 It means that we check the bound (square distance) which is started from 17 for 15 points in 2 dimensions.
 
-### Example for LHS_Multi_Bound.c
+### Example with LHS_Multi_Bound.c
 Input in the Command window of Matlab:
 
     Bound = LHS_Multi_Bound(15, 17)
@@ -25,9 +25,9 @@ You will get a better bound which is also started from 17 for 15 points in 2 dim
 
 This method focus on finding out the bound for the distribution in dimension 2. At last we will get a result of D2, a new bound for the distribution.
 
-At first we use the method in the article: _Bounds for Maximin Latin Hypercube Designs_ by Edwin R.van Dam, Gijs Rennen, and Bart Husslage. This method can find out the best bound at present. We realize this method in the first program and the result accords with the data on [the site for LHS maximin](https://spacefillingdesigns.nl/).
+At first we use the method in the article: _Bounds for Maximin Latin Hypercube Designs_ by Edwin R.van Dam, Gijs Rennen, and Bart Husslage. This method can find out the best bound at present. We realize this method in the first program LHS_Bound.c and the result accords with the data on [the site for LHS maximin](https://spacefillingdesigns.nl/).
 
-After that, we realize that some parts of the method can be improved, so we add more constraint to find out a better bound. The second program is realize in this way. As a result, there isn’t much difference between the two methods, but the new method can really decrease the bound for some points. However, because of the new constraint, the new method takes longer time than the origin. 
+After that, we realize that some parts of the method can be improved, so we add more constraint to find out a better bound. The second program LHS_Multi_Bound.c is realized in this way. As a result, there isn’t much difference between the two methods, but the new method can really decrease the bound for some points. However, because of the new constraint, the new method takes longer time than the origin. 
 
 At last, here is a part of the meaningful results we have got for present.
 
