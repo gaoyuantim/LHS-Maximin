@@ -33,7 +33,6 @@ try
     
     MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_EXSAUSTIF');
     cd (MAXIMINLHS_METHOD_DIR);
-    mex LHS.c
     mex LHS_2.c
     mex LHS_Optimal.c
     addpath (MAXIMINLHS_METHOD_DIR);
