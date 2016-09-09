@@ -104,7 +104,6 @@ void Liste_Check (int m, int n, int *coord, int *D2_pairs,
     }
 
   free (Table_comparaison);
-  Table_comparaison = NULL;
 }
 
 /*Change the distance between every point*/
@@ -274,13 +273,8 @@ void LHS_Start (int m, int n, double *D2_maximin, double *Table_max)
 
   /* Free pointer*/
   free (square);
-  square = NULL;
   free (D2_pairs);
-  D2_pairs = NULL;
   free (D2_points);
-  D2_points = NULL;
   free (coord);
-  coord= NULL;
   free (delta2_pairs);
-  delta2_pairs = NULL;
 }
