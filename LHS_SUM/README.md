@@ -3,9 +3,16 @@ In this files there are a programs realized by calculating sum distance in Matla
 
   Input in the Command window of Matlab : 
 
-    Table = LHS_multi ( n , k , sum[])
+    Table = LHS_multi ( n , k , sum)
 
-Here, _n_ is number of points, _k_ means dimension. _sum[]_ means the group of distance calculated.
+Here, _n_ is number of points, _k_ means dimension. _sum_ means the group of distance calculated.
+
+## Example
+After you have initialized mex files, input this:
+
+    Table LHS_multi(5, 8, [40])
+    
+Here, you can get the bound in 8 dimensions for 5 points and all the square distance between each two points is 40.
 
 ## About algorithm
 This method focus on the special situation when the dimension k >= the number of points n. According to the article _Bounds for Maximin Latin Hypercube Designs_ by Edwin R.van Dam, Gijs Rennen, Bart Husslage, we get a conclusion:
