@@ -49,6 +49,7 @@ void Swap (int *a, int *b)
 
 void LHS_Start (int m, int n, double *D2_maximin, double *Table_max);
 
+/*Interation part of Matlab and C. The dimension m and points n are input from matlab and the calculation result will be returned back to Matlab*/
 void mexFunction (int nlhs, mxArray *plhs[], int nrhs,
                   const mxArray *prhs[])
 {
@@ -58,13 +59,13 @@ void mexFunction (int nlhs, mxArray *plhs[], int nrhs,
   if (nrhs != 2)
     mexErrMsgTxt ("We need two caracters!");
 
-  m = (int) mxGetScalar (prhs[0]);
-  n = (int) mxGetScalar (prhs[1]);
-  plhs[0] = mxCreateDoubleMatrix (1, 1, mxREAL);
-  plhs[1] = mxCreateDoubleMatrix (n, m, mxREAL);
+  n = (int) mxGetScalar (prhs[0]);
+  m = (int) mxGetScalar (prhs[1]);
+  plhs[0] = mxCreateDoubleMatrix (n, m, mxREAL);
+  plhs[1] = mxCreateDoubleMatrix (1, 1, mxREAL);
 
-  D2_maximin = mxGetPr(plhs[0]);
-  Table_max = mxGetPr(plhs[1]);
+  D2_maximin = mxGetPr (plhs[1]);
+  Table_max = mxGetPr (plhs[0]);
 
   LHS_Start (m, n, D2_maximin, Table_max);
 }

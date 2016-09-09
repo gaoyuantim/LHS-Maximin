@@ -1,11 +1,24 @@
 ## Guide
-In this files there are two programs realized by testing maximin distance in matlab environment.
+In this files there are two programs realized by testing maximin distance in Matlab environment.
 
   Input in the Command window of Matlab : 
 
-    Table = filename(n,D2)
+    Table = LHS_D2(n, m, D2)
 
-Here, _n_ is number of points, _D2_ is the square of distance tested. _filename_ depends on which dimension you choose.
+Here, _n_ is number of points, _D2_ is the square of distance tested, _m_ is the dimension.
+
+##Example
+
+  After initialize the mex file, input in the Command window of Matlab :
+  
+    table = LHS_D2(15, 2, 17)
+    
+  We get :
+  
+0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9 | 10 | 11 | 12 | 13 | 14
+---|---|---|---|---|---|---|---|---|---|---|---|---|---|---
+0 | 4 | 8 | 12 | 1 | 5 | 9 | 13 | 2 | 6 | 10 | 14 | 3 | 7 | 11
+
 
 ## About algorithme
 This method focus on find out a group of points with a maximin square distance D2 we studied, at last we will get a result of table or nothing as D2 maybe too big.

@@ -3,9 +3,43 @@ In this files there are three programs using the iteration methods in Matlab env
 
   Input in the Command window of Matlab : 
 
-    [D2, Table] = filename(m,n)
+    [Table , D2] = filename(n,m)
 
 Here, _m_ is dimension, _n_ is number of points. _filename_ depends on which algorithme you choose.
+
+## Example
+you can run the programs in this way:
+
+    LHS(6,3)
+
+You will get:
+
+ 0 | 1 | 2 | 3 | 4 | 5 
+---|---|---|---|---|---
+ 1 | 3 | 4 | 0 | 5 | 2
+ 2 | 5 | 0 | 4 | 3 | 1
+
+For the second program:
+
+    LHS_2(6,3)
+
+You will get:
+
+ 0 | 1 | 2 | 3 | 4 | 5 
+---|---|---|---|---|---
+ 1 | 3 | 4 | 0 | 5 | 2
+ 2 | 5 | 0 | 4 | 3 | 1
+
+For the last program:
+
+    LHS_Optimal(6,3)
+
+You will get:
+
+ 0 | 1 | 2 | 3 | 4 | 5 
+---|---|---|---|---|---
+ 1 | 3 | 4 | 0 | 5 | 2
+ 1 | 5 | 2 | 3 | 0 | 4
 
 ## About algorithme
 
