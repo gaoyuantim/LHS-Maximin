@@ -7,13 +7,15 @@ Input in the Command window of Matlab :
 Here, _n_ is number of points, _D2_ is the bound of square distance which we start to test but this D2 isn’t tested in the program. _filename_ depends on which method you choose.
 
 ## Example
-After you have initialized the mex files, if you'd like to run LHS_Bound.c, input this:
+### Example for LHS_Bound.c
+After you have initialized the mex files, input in the Command window of Matlab:
 
     Bound = LHS_Bound(15, 17)
     
 It means that we check the bound (square distance) which is started from 17 for 15 points in 2 dimensions.
 
-If you'd like to use LHS_Multi_Bound.c, input this:
+### Example for LHS_Multi_Bound.c
+Input in the Command window of Matlab:
 
     Bound = LHS_Multi_Bound(15, 17)
     
