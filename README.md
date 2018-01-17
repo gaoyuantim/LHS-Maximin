@@ -30,7 +30,7 @@ You also need a C compiler, properly set up to compile MEX-files for
 your software of choice (Matlab or Octave).
 
 The results presented in the repository were obtained using Matlab
-R2015a on a computer equipped with Inter i7 3.4GHZ and RAM 16 Go.
+R2015a on a computer equipped with Intel i7 3.4GHZ and RAM 16 Go.
 
 ## Installation
 
