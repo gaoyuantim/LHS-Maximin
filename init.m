@@ -25,24 +25,24 @@ MAXIMINLHS_ROOT_DIR = fileparts (mfilename ('fullpath'));
 CURRENT_DIR = pwd ();
 
 try
-    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_D2TEST');
+    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_d2test');
     cd (MAXIMINLHS_METHOD_DIR);
     mex LHS_D2_2.c
     mex LHS_D2_3.c
     addpath (MAXIMINLHS_METHOD_DIR);
     
-    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_EXSAUSTIF');
+    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_exhaust');
     cd (MAXIMINLHS_METHOD_DIR);
     mex LHS_2.c
     mex LHS_Optimal.c
     addpath (MAXIMINLHS_METHOD_DIR);
     
-    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_SUM');
+    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_sum');
     cd (MAXIMINLHS_METHOD_DIR);
     mex LHS_Sum.c
     addpath (MAXIMINLHS_METHOD_DIR);
     
-    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_Bound');
+    MAXIMINLHS_METHOD_DIR = fullfile (MAXIMINLHS_ROOT_DIR, 'LHS_bound');
     cd (MAXIMINLHS_METHOD_DIR);
     mex LHS_Bound.c
     mex LHS_Multi_Bound.c
