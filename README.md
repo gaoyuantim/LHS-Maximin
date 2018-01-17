@@ -6,18 +6,22 @@ this repository includes 4 different points of views to solve the
 problem. For example:
 
 * Method of iteration
-  * In this method, the program check all the possibilities to find
-    out the results, you can check it in the folder: LHS_EXAUSTIF
+  * In this method, the program checks all the possibilities to find
+    out the result.
+  * Directory: `LHS_exhaust`.
 * Method of testing distance
   * Generally when we have got the maximin distance, we can try to
-    detect the result directly. In the folder: LHS_D2TEST
+    detect the result directly.
+  * Directory: `LHS_d2test`.
 * Method of sum combination
   * When the number of dimension >= number of points, the maximin
-    distance is close to the theoretical limit. In the folder: LHS_SUM
+    distance is close to the theoretical limit.
+  * Directory: `LHS_sum`.
 * Method of checking bound
   * When the number of points and dimensions are too big to find out
     the result, the repository provides a method to find out the
-    bound. In the folder: LHS_BOUND
+    bound.
+  * Directory: `LHS_bound`.
 
 ## Requirements
 
