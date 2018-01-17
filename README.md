@@ -26,10 +26,11 @@ Mathworks's [Matlab](http://www.mathworks.com/products/matlab/
 "Matlab") or [GNU Octave](https://www.gnu.org/software/octave/ "GNU
 Octave").
 
+You also need a C compiler, properly set up to compile MEX-files for
+your software of choice (Matlab or Octave).
+
 The results presented in the repository were obtained using Matlab
-R2015a on a computer equipped with Inter i7 3.4GHZ and RAM
-16g. Besides, you’d better pay attention to your version of visual
-studio, which should match well with Matlab version.
+R2015a on a computer equipped with Inter i7 3.4GHZ and RAM 16 Go.
 
 ## Installation
 
